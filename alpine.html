@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    <title>Alpine</title>
+
+</head>
+<body style="background-color: aquamarine;">
+    <h2>Practise Alpine</h2>
+
+    <div x-data="{ title: 'Hello Alpine' }">
+        <p x-text="title"></p>
+        <button x-on:click="title='Alpine Rocks!'">click me</button>
+    </div>
+<br>
+<hr>
+    <div x-data="{isShowing:false}">
+        <button x-on:click="isShowing= !isShowing" x-text="isShowing? 'Hide': 'Show'">
+            On click please hide or show information!
+        </button>
+<br>
+<br>
+        <div x-show="isShowing">
+            When clicking the button please hide the information.
+        </div>
+    </div>
+    <hr>
+    <!--Using Alpine to do iterations-->
+    <h2>For Loop using alpine</h2>
+    <div x-data="{people: ['Lebohang', 'Lerato', 'Tshidi', 'Orbet']}">
+        <template x-for="batho in people">
+            <li x-text="batho"></li>
+        </template>
+
+    </div>
+    <hr>
+    <h2>Message widget</h2>
+    <div x-data="{ message : '', enteredMessage : 'WELCOME TO ALPINE JS' }" >
+      <div x-text="message"></div>
+      <button x-on:click="message = enteredMessage" >Show message</button>
+    </div>
+    <hr>
+    <h2>Doing a counter with Alpine</h2>
+    <div x-data="{counter=0}">
+        <h3>counter</h3>
+        <div class="counter" x-text="counted">0</div>
+        <div>
+            <button x-on:click="counted">Increase count</button>
+            <button @click="counted--">Decrease count</button>
+        </div>
+    </div>
+</body>
+
+</html>
