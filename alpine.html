@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
     <title>Alpine</title>
-
-</head>
-<body style="background-color: aquamarine;">
+  </head>
+  <body style="background-color: aquamarine">
+    <h2>Doing a counter using DOM</h2>
+    <div>
+        <div class="counter" > </div>
+        <div>
+              <button class="increment" >Increment</button>
+              <button class="decrement" >Decrement</button>
+        </div>
+   </div>
+    <hr />
     <h2>Practise Alpine</h2>
 
-    <div x-data="{ title: 'Hello Alpine' }">
-        <p x-text="title"></p>
-        <button x-on:click="title='Alpine Rocks!'">click me</button>
+    <div x-data="{ title: 'Learning Alpinejs' }">
+      <p x-text="title"></p>
+      <button x-on:click="title='Feels great to learn such a framework!'">
+        click me
+      </button>
     </div>
-<br>
-<hr>
+    <br />
+    <hr />
     <div x-data="{isShowing:false}">
-        <button x-on:click="isShowing= !isShowing" x-text="isShowing? 'Hide': 'Show'">
-            On click please hide or show information!
-        </button>
-<br>
-<br>
-        <div x-show="isShowing">
-            When clicking the button please hide the information.
-        </div>
+      <button
+        x-on:click="isShowing= !isShowing"
+        x-text="isShowing? 'Hide': 'Show'"
+      >
+        On click please hide or show information!
+      </button>
+      <br />
+      <br />
+      <div x-show="isShowing">
+        When clicking the button please hide the information.
+      </div>
     </div>
-    <hr>
+    <hr />
     <!--Using Alpine to do iterations-->
     <h2>For Loop using alpine</h2>
     <div x-data="{people: ['Lebohang', 'Lerato', 'Tshidi', 'Orbet']}">
-        <template x-for="batho in people">
-            <li x-text="batho"></li>
-        </template>
-
+      <template x-for="batho in people">
+        <li x-text="batho"></li>
+      </template>
     </div>
-    <hr>
+    <hr />
     <h2>Message widget</h2>
-    <div x-data="{ message : '', enteredMessage : 'WELCOME TO ALPINE JS' }" >
+    <div x-data="{ message : '', enteredMessage : 'WELCOME TO ALPINE JS' }">
       <div x-text="message"></div>
-      <button x-on:click="message = enteredMessage" >Show message</button>
+      <button x-on:click="message = enteredMessage">Show message</button>
     </div>
-    <hr>
+    <hr />
     <h2>Doing a counter with Alpine</h2>
-    <div x-data="{counter=0}">
-        <h3>counter</h3>
-        <div class="counter" x-text="counted">0</div>
-        <div>
-            <button x-on:click="counted">Increase count</button>
-            <button @click="counted--">Decrease count</button>
-        </div>
+    <div x-data="{ count : 0 } ">
+      <h3>Counter</h3>
+      <div class="counter" x-text="count"></div>
+      <div>
+        <button @click="count++">Increment </button>
+        <button @click="count--">Decrement</button>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
